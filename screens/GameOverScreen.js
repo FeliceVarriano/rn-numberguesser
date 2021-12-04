@@ -1,10 +1,19 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import {
+  ProgressViewIOSComponent,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+} from "react-native";
 
-const GameOverScreen = () => {
+const GameOverScreen = (props) => {
   return (
     <View style={styles.screen}>
       <Text>The game is over!</Text>
+      <Text>Number of Rounds: {props.roundsNumber}</Text>
+      <Text>Number was: {props.userNumber}</Text>
+      <Button title="NEW GAME" onPress={props.onRestart} />
     </View>
   );
 };
