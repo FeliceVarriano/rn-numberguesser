@@ -14,6 +14,8 @@ import Card from "../components/Card";
 import colors from "../constants/colors";
 import Input from "../components/input";
 import NumberContainer from "../components/NumberContainer";
+import BodyText from "../components/BodyText";
+import HeaderText from "../components/HeaderText";
 
 const StartGameScreen = (props) => {
   //States
@@ -68,9 +70,9 @@ const StartGameScreen = (props) => {
     //For Ios, register a touch event without feedback to close the keyboard.
     <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <View style={styles.screen}>
-        <Text style={styles.title}>Start a New Game!</Text>
+        <HeaderText style={styles.title}>Start a New Game!</HeaderText>
         <Card style={styles.inputContainer}>
-          <Text>Select a Number</Text>
+          <BodyText>Select a Number</BodyText>
           <Input
             style={styles.textInput}
             blurOnSubmit
@@ -124,6 +126,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     marginVertical: 10,
+    fontFamily: "open-sans-bold",
   },
   button: {
     width: 100,
