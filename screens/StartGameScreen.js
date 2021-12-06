@@ -16,6 +16,7 @@ import Input from "../components/input";
 import NumberContainer from "../components/NumberContainer";
 import BodyText from "../components/BodyText";
 import HeaderText from "../components/HeaderText";
+import MainButton from "../components/MainButton";
 
 const StartGameScreen = (props) => {
   //States
@@ -57,11 +58,12 @@ const StartGameScreen = (props) => {
       <Card style={styles.summaryContainer}>
         <Text>You selected</Text>
         <NumberContainer>{selectedNumber}</NumberContainer>
-        <Button
-          title="START GAME"
+        <MainButton
           //onStartGame coming from props from app.js
           onPress={() => props.onStartGame(selectedNumber)}
-        />
+        >
+          START GAME
+        </MainButton>
       </Card>
     );
   }
@@ -84,19 +86,23 @@ const StartGameScreen = (props) => {
             value={enteredValue}
           />
           <View style={styles.buttonContainer}>
-            <View style={styles.button}>
-              <Button
-                title="Reset"
+            <View>
+              <MainButton
+                style={styles.button}
                 onPress={resetInputHandler}
                 color={colors.primary}
-              />
+              >
+                Reset
+              </MainButton>
             </View>
-            <View style={styles.button}>
-              <Button
-                title="Confirm"
+            <View>
+              <MainButton
+                style={styles.button}
                 onPress={confirmInputHandler}
                 color={colors.acccent}
-              />
+              >
+                Confirm
+              </MainButton>
             </View>
           </View>
         </Card>
@@ -113,7 +119,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   inputContainer: {
-    width: 300,
+    width: 400,
     maxWidth: "80%",
     alignItems: "center",
   },
